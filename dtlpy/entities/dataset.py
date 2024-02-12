@@ -420,6 +420,7 @@ class Dataset(entities.BaseEntity):
         :param dict labels_dict: dict of labels
         :return: dict of converted labels
         """
+        labels_dict = labels_dict[0]  # remove list that dtlpy forces
         dataset_labels_dict = dict()
         for label, color in labels_dict.items():
             dataset_labels_dict[label] = '#%02x%02x%02x' % color
